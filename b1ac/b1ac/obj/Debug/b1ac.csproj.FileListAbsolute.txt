@@ -1,0 +1,12 @@
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Debug\b1ac.exe.config
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Debug\b1ac.exe
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Debug\b1ac.pdb
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.csprojAssemblyReference.cache
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.Properties.Resources.resources
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.csproj.GenerateResource.cache
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.csproj.CoreCompileInputs.cache
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.exe
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.pdb
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.mainform.resources
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Debug\Bunifu_UI_v1.5.4.dll
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Debug\b1ac.csproj.CopyComplete
