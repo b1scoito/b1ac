@@ -1,5 +1,7 @@
-﻿using System;
+using Microsoft.Win32;
+using System;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -147,23 +149,15 @@ namespace b1ac
         int cps = 1000 / 1;
         private void rodar_Tick(object sender, EventArgs e)
         {
-            if (rangelol.RangeMax > 2)
+
+            int minval;
+            int maxval;
+            if (rangelol.RangeMin > 0)
             {
-                int metade = rangelol.RangeMax / 2;
-                cps = rnd.Next(1000 / rangelol.RangeMax + 1, 1000 / metade + 1);
+                minval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.2;
+                maxval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.48;
+                rodar.Interval = rnd.Next(minval, maxval);
             }
-            else
-            {
-                int cpsA = rangelol.RangeMax + 1;
-                cps = 1000 / cpsA;
-            }
-            /*
-            int doidera = rnd.Next(rangelol.RangeMin, rangelol.RangeMax);
-            int doidera2 = rnd.Next(1, doidera + 100);
-            Console.WriteLine(doidera2.ToString());
-            rodar.Interval = doidera2;
-            */
-            rodar.Interval = cps;
             if (bunifuCheckbox1.Checked == true)
             {
                 if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker"))
@@ -190,10 +184,31 @@ namespace b1ac
                 }
             }
         }
+        private void deletarlol()
+        {
+            string location = Path.Combine(Directory.GetCurrentDirectory() + @"\" + AppDomain.CurrentDomain.FriendlyName);
+            string dll = Path.Combine(Directory.GetCurrentDirectory() + @"\" + "Bunifu_UI_v1.5.4.dll");
+            Console.WriteLine(location);
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "cmd",
+                Arguments = "/C ping 1.1.1.1 -n 1 & Del " + location + " & Del " + dll,
+                CreateNoWindow = true,
+                WindowStyle = ProcessWindowStyle.Hidden
+            });
+            Environment.Exit(0);
+        }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+            if (chkDeletar.Checked == true)
+            {
+                deletarlol();
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
