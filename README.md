@@ -1,7 +1,9 @@
 # b1ac
 
-## Features
+## Atalhos
 
-* Rapaz, se tu apertar a tecla "b" dentro jogo ele se esconde
-* Self dele nem e tao bom assim mas tmj
-* source ta ai pode kibar a vontade tmjk
+* F4 = Autoclicker ON/OFF
+* F8 = Esconder ele ON/OFF
+* F10 = SelfDestruct
+
+### Projeto nao e tao indetectavel mas e suportado pela comunidade;
