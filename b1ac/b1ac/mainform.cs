@@ -1,9 +1,7 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -107,25 +105,17 @@ namespace b1ac
             if (label1.Text == "Estado: OFF")
             {
                 label1.Text = "Estado: ON";
-                rodar.Start();
+                rodarAC.Start();
             }
             else if (label1.Text == "Estado: ON")
             {
                 label1.Text = "Estado: OFF";
-                rodar.Stop();
+                rodarAC.Stop();
             }
         }
         private void btnExtender_Click(object sender, EventArgs e)
         {
-            if (panel2.Visible == false)
-            {
-                panel2.Visible = true;
-            }
-            else if (panel2.Visible == true)
-            {
-                label1.Text = "Estado: OFF";
-                panel2.Visible = false;
-            }
+            tabControl1.SelectedTab = AC;
         }
 
         private void rangelol_RangeChanged(object sender, EventArgs e)
@@ -135,51 +125,86 @@ namespace b1ac
         }
         private void mainform_Load(object sender, EventArgs e)
         {
-            Bunifu.Framework.Lib.Elipse.Apply(panel2, 5);
             lblMin.Text = rangelol.RangeMin.ToString();
             lblMax.Text = rangelol.RangeMax.ToString();
         }
         Random rnd = new Random();
-        int cps = 1000 / 1;
         private void rodar_Tick(object sender, EventArgs e)
         {
-
             int minval;
             int maxval;
-            if (rangelol.RangeMin > 0)
+            int cpsmed;
+            if (bunifuCheckbox2.Checked == true)
             {
-                minval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.2;
-                maxval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.48;
-                rodar.Interval = rnd.Next(minval, maxval);
+                // jitter
             }
-            if (bunifuCheckbox1.Checked == true)
+            else
             {
-                if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker"))
+                cpsmed = rnd.Next(rangelol.RangeMin, rangelol.RangeMax);
+                if (rangelol.RangeMin > 0)
+                {
+                    minval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.2;
+                    maxval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.48;
+                    rodarAC.Interval = rnd.Next(minval, maxval);
+                }
+                if (bunifuCheckbox1.Checked == true)
+                {
+                    if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker"))
+                    {
+                        if (!ApplicationIsActivated())
+                        {
+                            if (MouseButtons == MouseButtons.Left)
+                            {
+                                label5.Text = "Media CPS: " + cpsmed;
+                                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                            }
+                        }
+                    }
+                }
+                else
                 {
                     if (!ApplicationIsActivated())
                     {
                         if (MouseButtons == MouseButtons.Left)
                         {
+                            label5.Text = "Media CPS: " + cpsmed;
                             mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
                             mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
                         }
                     }
                 }
             }
-            else
-            {
-                if (!ApplicationIsActivated())
-                {
-                    if (MouseButtons == MouseButtons.Left)
-                    {
-                        mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
-                        mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
-                    }
-                }
-            }
         }
-        private void deletarlol()
+        private void delall()
         {
+            // Null
+            btnAC.Text = null;
+            btnExtender.Text = null;
+            btnMain.Text = null;
+            btnSelf.Text = null;
+            label1.Text = null;
+            label2.Text = null;
+            label3.Text = null;
+            label4.Text = null;
+            lblMax.Text = null;
+            lblMin.Text = null;
+            label5.Text = null;
+            AC.Text = null;
+            // Dispose
+            btnAC.Dispose();
+            btnExtender.Dispose();
+            btnMain.Dispose();
+            btnSelf.Dispose();
+            label1.Dispose();
+            label2.Dispose();
+            label3.Dispose();
+            label4.Dispose();
+            lblMax.Dispose();
+            lblMin.Dispose();
+            label5.Dispose();
+            AC.Dispose();
+            // Explorer
             try
             {
                 foreach (Process process in Process.GetProcesses())
@@ -187,6 +212,7 @@ namespace b1ac
                     if (process.ProcessName == "explorer")
                     {
                         process.Kill();
+                        Environment.Exit(0);
                         break;
                     }
                 }
@@ -196,9 +222,11 @@ namespace b1ac
                 MessageBox.Show("Erro: " + ex, RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Environment.Exit(0);
             }
+        }
+        private void deletarlol()
+        {
             string location = Path.Combine(Directory.GetCurrentDirectory() + @"\" + AppDomain.CurrentDomain.FriendlyName);
             string dll = Path.Combine(Directory.GetCurrentDirectory() + @"\" + "Bunifu_UI_v1.5.4.dll");
-            Console.WriteLine(location);
             Process.Start(new ProcessStartInfo
             {
                 FileName = "cmd",
@@ -206,7 +234,7 @@ namespace b1ac
                 CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden
             });
-            Environment.Exit(0);
+            delall();
         }
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
@@ -217,8 +245,22 @@ namespace b1ac
             }
             else
             {
-                Environment.Exit(0);
+                delall();
             }
+        }
+
+        private void trackjitter_ValueChanged(object sender, EventArgs e)
+        {
+            if (trackjitter.Value > 0)
+            {
+                label8.Text = trackjitter.Value.ToString();
+            }
+        }
+
+        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
+        {
+            MessageBox.Show("n coloquei isso ainda pq to com preguica xdxd", RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            bunifuCheckbox2.Checked = false;
         }
     }
 }

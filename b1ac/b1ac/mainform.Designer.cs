@@ -36,18 +36,26 @@
             this.btnSelf = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMain = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExtender = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.rodarAC = new System.Windows.Forms.Timer(this.components);
+            this.btnAC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.tabControl1 = new TablessControl();
+            this.AC = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.trackjitter = new Bunifu.Framework.UI.BunifuTrackbar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bunifuCheckbox2 = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label3 = new System.Windows.Forms.Label();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
             this.lblMin = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.rangelol = new Bunifu.Framework.UI.BunifuRange();
-            this.btnExtender = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.rodar = new System.Windows.Forms.Timer(this.components);
-            this.btnAC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.AC.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -97,7 +105,7 @@
             this.btnSelf.IconRightVisible = true;
             this.btnSelf.IconRightZoom = 0D;
             this.btnSelf.IconVisible = true;
-            this.btnSelf.IconZoom = 65D;
+            this.btnSelf.IconZoom = 50D;
             this.btnSelf.IsTab = false;
             this.btnSelf.Name = "btnSelf";
             this.btnSelf.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
@@ -135,7 +143,7 @@
             this.btnMain.IconRightVisible = true;
             this.btnMain.IconRightZoom = 0D;
             this.btnMain.IconVisible = true;
-            this.btnMain.IconZoom = 60D;
+            this.btnMain.IconZoom = 50D;
             this.btnMain.IsTab = false;
             this.btnMain.Name = "btnMain";
             this.btnMain.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
@@ -145,65 +153,6 @@
             this.btnMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMain.Textcolor = System.Drawing.Color.White;
             this.btnMain.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(52)))));
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.bunifuCheckbox1);
-            this.panel2.Controls.Add(this.lblMax);
-            this.panel2.Controls.Add(this.lblMin);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.rangelol);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Name = "label3";
-            // 
-            // bunifuCheckbox1
-            // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.DimGray;
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.bunifuCheckbox1, "bunifuCheckbox1");
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            // 
-            // lblMax
-            // 
-            resources.ApplyResources(this.lblMax, "lblMax");
-            this.lblMax.ForeColor = System.Drawing.Color.White;
-            this.lblMax.Name = "lblMax";
-            // 
-            // lblMin
-            // 
-            resources.ApplyResources(this.lblMin, "lblMin");
-            this.lblMin.ForeColor = System.Drawing.Color.White;
-            this.lblMin.Name = "lblMin";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Name = "label2";
-            // 
-            // rangelol
-            // 
-            this.rangelol.BackColor = System.Drawing.Color.Transparent;
-            this.rangelol.BackgroudColor = System.Drawing.Color.DimGray;
-            this.rangelol.BorderRadius = 5;
-            this.rangelol.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.rangelol, "rangelol");
-            this.rangelol.MaximumRange = 21;
-            this.rangelol.Name = "rangelol";
-            this.rangelol.RangeMax = 10;
-            this.rangelol.RangeMin = 0;
-            this.rangelol.RangeChanged += new System.EventHandler(this.rangelol_RangeChanged);
             // 
             // btnExtender
             // 
@@ -237,10 +186,10 @@
             this.btnExtender.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExtender.Click += new System.EventHandler(this.btnExtender_Click);
             // 
-            // rodar
+            // rodarAC
             // 
-            this.rodar.Interval = 50;
-            this.rodar.Tick += new System.EventHandler(this.rodar_Tick);
+            this.rodarAC.Interval = 50;
+            this.rodarAC.Tick += new System.EventHandler(this.rodar_Tick);
             // 
             // btnAC
             // 
@@ -262,7 +211,7 @@
             this.btnAC.IconRightVisible = true;
             this.btnAC.IconRightZoom = 0D;
             this.btnAC.IconVisible = true;
-            this.btnAC.IconZoom = 59D;
+            this.btnAC.IconZoom = 50D;
             this.btnAC.IsTab = false;
             this.btnAC.Name = "btnAC";
             this.btnAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
@@ -274,13 +223,134 @@
             this.btnAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAC.Click += new System.EventHandler(this.btnAC_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.AC);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            // 
+            // AC
+            // 
+            this.AC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(52)))));
+            this.AC.Controls.Add(this.label8);
+            this.AC.Controls.Add(this.label7);
+            this.AC.Controls.Add(this.trackjitter);
+            this.AC.Controls.Add(this.label6);
+            this.AC.Controls.Add(this.bunifuCheckbox2);
+            this.AC.Controls.Add(this.label3);
+            this.AC.Controls.Add(this.label5);
+            this.AC.Controls.Add(this.lblMax);
+            this.AC.Controls.Add(this.lblMin);
+            this.AC.Controls.Add(this.rangelol);
+            this.AC.Controls.Add(this.bunifuCheckbox1);
+            this.AC.Controls.Add(this.label2);
+            resources.ApplyResources(this.AC, "AC");
+            this.AC.Name = "AC";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Name = "label7";
+            // 
+            // trackjitter
+            // 
+            this.trackjitter.BackColor = System.Drawing.Color.Transparent;
+            this.trackjitter.BackgroudColor = System.Drawing.Color.DimGray;
+            this.trackjitter.BorderRadius = 5;
+            this.trackjitter.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            resources.ApplyResources(this.trackjitter, "trackjitter");
+            this.trackjitter.MaximumValue = 10;
+            this.trackjitter.MinimumValue = 0;
+            this.trackjitter.Name = "trackjitter";
+            this.trackjitter.SliderRadius = 5;
+            this.trackjitter.Value = 0;
+            this.trackjitter.ValueChanged += new System.EventHandler(this.trackjitter_ValueChanged);
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Name = "label6";
+            // 
+            // bunifuCheckbox2
+            // 
+            this.bunifuCheckbox2.BackColor = System.Drawing.Color.DimGray;
+            this.bunifuCheckbox2.ChechedOffColor = System.Drawing.Color.DimGray;
+            this.bunifuCheckbox2.Checked = false;
+            this.bunifuCheckbox2.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.bunifuCheckbox2, "bunifuCheckbox2");
+            this.bunifuCheckbox2.Name = "bunifuCheckbox2";
+            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Name = "label3";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Name = "label5";
+            // 
+            // lblMax
+            // 
+            resources.ApplyResources(this.lblMax, "lblMax");
+            this.lblMax.ForeColor = System.Drawing.Color.White;
+            this.lblMax.Name = "lblMax";
+            // 
+            // lblMin
+            // 
+            resources.ApplyResources(this.lblMin, "lblMin");
+            this.lblMin.ForeColor = System.Drawing.Color.White;
+            this.lblMin.Name = "lblMin";
+            // 
+            // rangelol
+            // 
+            this.rangelol.BackColor = System.Drawing.Color.Transparent;
+            this.rangelol.BackgroudColor = System.Drawing.Color.DimGray;
+            this.rangelol.BorderRadius = 5;
+            this.rangelol.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            resources.ApplyResources(this.rangelol, "rangelol");
+            this.rangelol.MaximumRange = 21;
+            this.rangelol.Name = "rangelol";
+            this.rangelol.RangeMax = 10;
+            this.rangelol.RangeMin = 0;
+            this.rangelol.RangeChanged += new System.EventHandler(this.rangelol_RangeChanged);
+            // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.DimGray;
+            this.bunifuCheckbox1.Checked = true;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.bunifuCheckbox1, "bunifuCheckbox1");
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Name = "label2";
+            // 
             // mainform
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnExtender);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAC);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -291,8 +361,9 @@
             this.Load += new System.EventHandler(this.mainform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.AC.ResumeLayout(false);
+            this.AC.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -302,19 +373,26 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuFlatButton btnMain;
         private Bunifu.Framework.UI.BunifuFlatButton btnAC;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuFlatButton btnExtender;
-        private Bunifu.Framework.UI.BunifuRange rangelol;
-        private System.Windows.Forms.Label lblMax;
-        private System.Windows.Forms.Label lblMin;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
-        private System.Windows.Forms.Timer rodar;
+        private System.Windows.Forms.Timer rodarAC;
         private Bunifu.Framework.UI.BunifuFlatButton btnSelf;
         private System.Windows.Forms.Label label4;
         private Bunifu.Framework.UI.BunifuCheckbox chkDeletar;
+        private System.Windows.Forms.Label lblMax;
+        private System.Windows.Forms.Label lblMin;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuRange rangelol;
+        private System.Windows.Forms.Label label5;
+        private TablessControl tabControl1;
+        private System.Windows.Forms.TabPage AC;
+        private Bunifu.Framework.UI.BunifuTrackbar trackjitter;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -73,6 +73,16 @@ namespace b1ac.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap round_keyboard_white_18dp {
+            get {
+                object obj = ResourceManager.GetObject("round_keyboard_white_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap round_mouse_white_18dp {
             get {
                 object obj = ResourceManager.GetObject("round_mouse_white_18dp", resourceCulture);
