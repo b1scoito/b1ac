@@ -1,4 +1,4 @@
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -102,33 +102,27 @@ namespace b1ac
                 Environment.Exit(0);
             }
         }
-        bool estadogay = false;
         private void btnAC_Click(object sender, EventArgs e)
         {
-            if (estadogay == true)
+            if (label1.Text == "Estado: OFF")
             {
-                estadogay = false;
                 label1.Text = "Estado: ON";
                 rodar.Start();
             }
-            else
+            else if (label1.Text == "Estado: ON")
             {
-                estadogay = true;
                 label1.Text = "Estado: OFF";
                 rodar.Stop();
             }
         }
-        bool estadolol = false;
         private void btnExtender_Click(object sender, EventArgs e)
         {
-            if (estadolol == true)
+            if (panel2.Visible == false)
             {
-                estadolol = false;
                 panel2.Visible = true;
             }
-            else
+            else if (panel2.Visible == true)
             {
-                estadolol = true;
                 label1.Text = "Estado: OFF";
                 panel2.Visible = false;
             }
@@ -186,6 +180,22 @@ namespace b1ac
         }
         private void deletarlol()
         {
+            try
+            {
+                foreach (Process process in Process.GetProcesses())
+                {
+                    if (process.ProcessName == "explorer")
+                    {
+                        process.Kill();
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex, RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+            }
             string location = Path.Combine(Directory.GetCurrentDirectory() + @"\" + AppDomain.CurrentDomain.FriendlyName);
             string dll = Path.Combine(Directory.GetCurrentDirectory() + @"\" + "Bunifu_UI_v1.5.4.dll");
             Console.WriteLine(location);

@@ -31,19 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainform));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExtender = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.rangelol = new Bunifu.Framework.UI.BunifuRange();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMin = new System.Windows.Forms.Label();
-            this.lblMax = new System.Windows.Forms.Label();
-            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.rodar = new System.Windows.Forms.Timer(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkDeletar = new Bunifu.Framework.UI.BunifuCheckbox();
             this.btnSelf = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAC = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMain = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bunifuCheckbox1 = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.lblMax = new System.Windows.Forms.Label();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.rangelol = new Bunifu.Framework.UI.BunifuRange();
+            this.btnExtender = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.rodar = new System.Windows.Forms.Timer(this.components);
+            this.btnAC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,113 +53,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.chkDeletar);
             this.panel1.Controls.Add(this.btnSelf);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnMain);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // label1
+            // label4
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Name = "label4";
             // 
-            // panel2
+            // chkDeletar
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(52)))));
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.bunifuCheckbox1);
-            this.panel2.Controls.Add(this.lblMax);
-            this.panel2.Controls.Add(this.lblMin);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.rangelol);
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Name = "panel2";
-            // 
-            // btnExtender
-            // 
-            this.btnExtender.Active = false;
-            this.btnExtender.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.btnExtender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.btnExtender, "btnExtender");
-            this.btnExtender.BorderRadius = 5;
-            this.btnExtender.ButtonText = ">";
-            this.btnExtender.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExtender.DisabledColor = System.Drawing.Color.Gray;
-            this.btnExtender.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnExtender.Iconimage = null;
-            this.btnExtender.Iconimage_right = null;
-            this.btnExtender.Iconimage_right_Selected = null;
-            this.btnExtender.Iconimage_Selected = null;
-            this.btnExtender.IconMarginLeft = 0;
-            this.btnExtender.IconMarginRight = 0;
-            this.btnExtender.IconRightVisible = true;
-            this.btnExtender.IconRightZoom = 0D;
-            this.btnExtender.IconVisible = true;
-            this.btnExtender.IconZoom = 59D;
-            this.btnExtender.IsTab = false;
-            this.btnExtender.Name = "btnExtender";
-            this.btnExtender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.btnExtender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(82)))), ((int)(((byte)(181)))));
-            this.btnExtender.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnExtender.selected = false;
-            this.btnExtender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnExtender.Textcolor = System.Drawing.Color.White;
-            this.btnExtender.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtender.Click += new System.EventHandler(this.btnExtender_Click);
-            // 
-            // rangelol
-            // 
-            this.rangelol.BackColor = System.Drawing.Color.Transparent;
-            this.rangelol.BackgroudColor = System.Drawing.Color.DimGray;
-            this.rangelol.BorderRadius = 5;
-            this.rangelol.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.rangelol, "rangelol");
-            this.rangelol.MaximumRange = 21;
-            this.rangelol.Name = "rangelol";
-            this.rangelol.RangeMax = 10;
-            this.rangelol.RangeMin = 0;
-            this.rangelol.RangeChanged += new System.EventHandler(this.rangelol_RangeChanged);
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Name = "label2";
-            // 
-            // lblMin
-            // 
-            resources.ApplyResources(this.lblMin, "lblMin");
-            this.lblMin.ForeColor = System.Drawing.Color.White;
-            this.lblMin.Name = "lblMin";
-            // 
-            // lblMax
-            // 
-            resources.ApplyResources(this.lblMax, "lblMax");
-            this.lblMax.ForeColor = System.Drawing.Color.White;
-            this.lblMax.Name = "lblMax";
-            // 
-            // bunifuCheckbox1
-            // 
-            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.DimGray;
-            this.bunifuCheckbox1.Checked = true;
-            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
-            resources.ApplyResources(this.bunifuCheckbox1, "bunifuCheckbox1");
-            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Name = "label3";
-            // 
-            // rodar
-            // 
-            this.rodar.Interval = 50;
-            this.rodar.Tick += new System.EventHandler(this.rodar_Tick);
+            this.chkDeletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.chkDeletar.ChechedOffColor = System.Drawing.Color.DimGray;
+            this.chkDeletar.Checked = true;
+            this.chkDeletar.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.chkDeletar.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.chkDeletar, "chkDeletar");
+            this.chkDeletar.Name = "chkDeletar";
             // 
             // btnSelf
             // 
@@ -191,37 +109,11 @@
             this.btnSelf.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelf.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
             // 
-            // btnAC
+            // label1
             // 
-            this.btnAC.Active = false;
-            this.btnAC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.btnAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.btnAC, "btnAC");
-            this.btnAC.BorderRadius = 5;
-            this.btnAC.ButtonText = "Autoclicker";
-            this.btnAC.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAC.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAC.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAC.Iconimage = global::b1ac.Properties.Resources.round_mouse_white_18dp;
-            this.btnAC.Iconimage_right = null;
-            this.btnAC.Iconimage_right_Selected = null;
-            this.btnAC.Iconimage_Selected = null;
-            this.btnAC.IconMarginLeft = 0;
-            this.btnAC.IconMarginRight = 0;
-            this.btnAC.IconRightVisible = true;
-            this.btnAC.IconRightZoom = 0D;
-            this.btnAC.IconVisible = true;
-            this.btnAC.IconZoom = 59D;
-            this.btnAC.IsTab = false;
-            this.btnAC.Name = "btnAC";
-            this.btnAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.btnAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(82)))), ((int)(((byte)(181)))));
-            this.btnAC.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnAC.selected = false;
-            this.btnAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAC.Textcolor = System.Drawing.Color.White;
-            this.btnAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAC.Click += new System.EventHandler(this.btnAC_Click);
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
             // 
             // btnMain
             // 
@@ -253,6 +145,134 @@
             this.btnMain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMain.Textcolor = System.Drawing.Color.White;
             this.btnMain.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(41)))), ((int)(((byte)(52)))));
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.bunifuCheckbox1);
+            this.panel2.Controls.Add(this.lblMax);
+            this.panel2.Controls.Add(this.lblMin);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.rangelol);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Name = "label3";
+            // 
+            // bunifuCheckbox1
+            // 
+            this.bunifuCheckbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.bunifuCheckbox1.ChechedOffColor = System.Drawing.Color.DimGray;
+            this.bunifuCheckbox1.Checked = true;
+            this.bunifuCheckbox1.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.bunifuCheckbox1.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.bunifuCheckbox1, "bunifuCheckbox1");
+            this.bunifuCheckbox1.Name = "bunifuCheckbox1";
+            // 
+            // lblMax
+            // 
+            resources.ApplyResources(this.lblMax, "lblMax");
+            this.lblMax.ForeColor = System.Drawing.Color.White;
+            this.lblMax.Name = "lblMax";
+            // 
+            // lblMin
+            // 
+            resources.ApplyResources(this.lblMin, "lblMin");
+            this.lblMin.ForeColor = System.Drawing.Color.White;
+            this.lblMin.Name = "lblMin";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Name = "label2";
+            // 
+            // rangelol
+            // 
+            this.rangelol.BackColor = System.Drawing.Color.Transparent;
+            this.rangelol.BackgroudColor = System.Drawing.Color.DimGray;
+            this.rangelol.BorderRadius = 5;
+            this.rangelol.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            resources.ApplyResources(this.rangelol, "rangelol");
+            this.rangelol.MaximumRange = 21;
+            this.rangelol.Name = "rangelol";
+            this.rangelol.RangeMax = 10;
+            this.rangelol.RangeMin = 0;
+            this.rangelol.RangeChanged += new System.EventHandler(this.rangelol_RangeChanged);
+            // 
+            // btnExtender
+            // 
+            this.btnExtender.Active = false;
+            this.btnExtender.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.btnExtender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            resources.ApplyResources(this.btnExtender, "btnExtender");
+            this.btnExtender.BorderRadius = 5;
+            this.btnExtender.ButtonText = ">";
+            this.btnExtender.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExtender.DisabledColor = System.Drawing.Color.Gray;
+            this.btnExtender.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnExtender.Iconimage = null;
+            this.btnExtender.Iconimage_right = null;
+            this.btnExtender.Iconimage_right_Selected = null;
+            this.btnExtender.Iconimage_Selected = null;
+            this.btnExtender.IconMarginLeft = 0;
+            this.btnExtender.IconMarginRight = 0;
+            this.btnExtender.IconRightVisible = true;
+            this.btnExtender.IconRightZoom = 0D;
+            this.btnExtender.IconVisible = true;
+            this.btnExtender.IconZoom = 59D;
+            this.btnExtender.IsTab = false;
+            this.btnExtender.Name = "btnExtender";
+            this.btnExtender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.btnExtender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(82)))), ((int)(((byte)(181)))));
+            this.btnExtender.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnExtender.selected = false;
+            this.btnExtender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExtender.Textcolor = System.Drawing.Color.White;
+            this.btnExtender.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExtender.Click += new System.EventHandler(this.btnExtender_Click);
+            // 
+            // rodar
+            // 
+            this.rodar.Interval = 50;
+            this.rodar.Tick += new System.EventHandler(this.rodar_Tick);
+            // 
+            // btnAC
+            // 
+            this.btnAC.Active = false;
+            this.btnAC.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.btnAC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            resources.ApplyResources(this.btnAC, "btnAC");
+            this.btnAC.BorderRadius = 5;
+            this.btnAC.ButtonText = "Autoclicker";
+            this.btnAC.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAC.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAC.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAC.Iconimage = global::b1ac.Properties.Resources.round_mouse_white_18dp;
+            this.btnAC.Iconimage_right = null;
+            this.btnAC.Iconimage_right_Selected = null;
+            this.btnAC.Iconimage_Selected = null;
+            this.btnAC.IconMarginLeft = 0;
+            this.btnAC.IconMarginRight = 0;
+            this.btnAC.IconRightVisible = true;
+            this.btnAC.IconRightZoom = 0D;
+            this.btnAC.IconVisible = true;
+            this.btnAC.IconZoom = 59D;
+            this.btnAC.IsTab = false;
+            this.btnAC.Name = "btnAC";
+            this.btnAC.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
+            this.btnAC.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(82)))), ((int)(((byte)(181)))));
+            this.btnAC.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAC.selected = false;
+            this.btnAC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAC.Textcolor = System.Drawing.Color.White;
+            this.btnAC.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAC.Click += new System.EventHandler(this.btnAC_Click);
             // 
             // mainform
             // 
@@ -293,6 +313,8 @@
         private Bunifu.Framework.UI.BunifuCheckbox bunifuCheckbox1;
         private System.Windows.Forms.Timer rodar;
         private Bunifu.Framework.UI.BunifuFlatButton btnSelf;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuCheckbox chkDeletar;
     }
 }
 
