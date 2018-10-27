@@ -10,13 +10,11 @@ namespace b1ac
 {
     public partial class mainform : Form
     {
+        #region imports
         [DllImport("user32", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
-        private const int MOUSEEVENTF_MOVE = 0x0001;
-        private const int MOUSEEVENTF_LEFTDOWN = 0x0002;
-        private const int MOUSEEVENTF_LEFTUP = 0x0004;
-        private const int MOUSEEVENTF_RIGHTDOWN = 0x0008;
-        private const int MOUSEEVENTF_RIGHTUP = 0x0016;
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
         [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         private static extern IntPtr GetForegroundWindow();
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -25,6 +23,11 @@ namespace b1ac
         static extern int GetWindowTextLength(IntPtr hWnd);
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+        private const int MOUSEEVENTF_MOVE = 0x0001;
+        private const int MOUSEEVENTF_LEFTDOWN = 0x0002;
+        private const int MOUSEEVENTF_LEFTUP = 0x0004;
+        private const int MOUSEEVENTF_RIGHTDOWN = 0x0008;
+        private const int MOUSEEVENTF_RIGHTUP = 0x0016;
         public static bool ApplicationIsActivated()
         {
             IntPtr foregroundWindow = GetForegroundWindow();
@@ -60,45 +63,63 @@ namespace b1ac
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
+        #endregion
+        public mainform()
+        {
+            InitializeComponent();
+            int FirstHotkeyId = 1;
+            int FirstHotKeyKey = (int)Keys.F8;
+            bool F8Registered = RegisterHotKey(Handle, FirstHotkeyId, 0x0000, FirstHotKeyKey);
+            int SecondHotkeyId = 2;
+            int SecondHotKeyKey = (int)Keys.F4;
+            bool F4Registered = RegisterHotKey(Handle, SecondHotkeyId, 0x0000, SecondHotKeyKey);
+            int ThirdHotkeyId = 3;
+            int ThirdHotkeyKey = (int)Keys.F10;
+            bool F10Registered = RegisterHotKey(Handle, ThirdHotkeyId, 0x0000, ThirdHotkeyKey);
+            if (!F8Registered)
+            {
+                Console.WriteLine("Global Hotkey F8 couldn't be registered !");
+            }
+
+            if (!F4Registered)
+            {
+                Console.WriteLine("Global Hotkey F4 couldn't be registered !");
+            }
+            if (!F10Registered)
+            {
+                Console.WriteLine("Global Hotkey F4 couldn't be registered !");
+            }
+        }
         bool estado = false;
-        [DllImport("user32.dll")]
-        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x0312)
             {
-                if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker"))
+                int id = m.WParam.ToInt32();
+                switch (id)
                 {
-                    if (estado == true)
-                    {
-                        estado = false;
-                        Show();
-                    }
-                    else
-                    {
-                        estado = true;
-                        Hide();
-                    }
+                    case 1:
+                        if (estado == true)
+                        {
+                            estado = false;
+                            Show();
+                        }
+                        else
+                        {
+                            estado = true;
+                            Hide();
+                        }
+                        break;
+                    case 2:
+                        btnAC_Click(this, new EventArgs());
+                        break;
+                    case 3:
+                        bunifuFlatButton1_Click(this, new EventArgs());
+                        break;
                 }
             }
+
             base.WndProc(ref m);
-        }
-        public mainform()
-        {
-            InitializeComponent();
-            bool success = RegisterHotKey(Handle, GetType().GetHashCode(), 0x0000, 0x42);
-            try
-            {
-                if (success == true)
-                {
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro: " + ex, RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
-            }
         }
         private void btnAC_Click(object sender, EventArgs e)
         {
@@ -120,8 +141,8 @@ namespace b1ac
 
         private void rangelol_RangeChanged(object sender, EventArgs e)
         {
-            lblMin.Text = rangelol.RangeMin.ToString();
-            lblMax.Text = rangelol.RangeMax.ToString();
+                lblMin.Text = rangelol.RangeMin.ToString();
+                lblMax.Text = rangelol.RangeMax.ToString();
         }
         private void mainform_Load(object sender, EventArgs e)
         {
@@ -131,6 +152,10 @@ namespace b1ac
         Random rnd = new Random();
         private void rodar_Tick(object sender, EventArgs e)
         {
+            if (rangelol.RangeMin == 0)
+            {
+                rangelol.RangeMin = 1;
+            }
             int minval;
             int maxval;
             int cpsmed;
