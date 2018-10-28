@@ -36,14 +36,13 @@
             this.btnSelf = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnMain = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnExtender = new Bunifu.Framework.UI.BunifuFlatButton();
             this.rodarAC = new System.Windows.Forms.Timer(this.components);
             this.btnAC = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1 = new TablessControl();
             this.AC = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
@@ -160,38 +159,6 @@
             this.btnMain.Textcolor = System.Drawing.Color.White;
             this.btnMain.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnExtender
-            // 
-            this.btnExtender.Active = false;
-            this.btnExtender.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.btnExtender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            resources.ApplyResources(this.btnExtender, "btnExtender");
-            this.btnExtender.BorderRadius = 5;
-            this.btnExtender.ButtonText = ">";
-            this.btnExtender.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExtender.DisabledColor = System.Drawing.Color.Gray;
-            this.btnExtender.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnExtender.Iconimage = null;
-            this.btnExtender.Iconimage_right = null;
-            this.btnExtender.Iconimage_right_Selected = null;
-            this.btnExtender.Iconimage_Selected = null;
-            this.btnExtender.IconMarginLeft = 0;
-            this.btnExtender.IconMarginRight = 0;
-            this.btnExtender.IconRightVisible = true;
-            this.btnExtender.IconRightZoom = 0D;
-            this.btnExtender.IconVisible = true;
-            this.btnExtender.IconZoom = 59D;
-            this.btnExtender.IsTab = false;
-            this.btnExtender.Name = "btnExtender";
-            this.btnExtender.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(91)))), ((int)(((byte)(199)))));
-            this.btnExtender.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(82)))), ((int)(((byte)(181)))));
-            this.btnExtender.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnExtender.selected = false;
-            this.btnExtender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnExtender.Textcolor = System.Drawing.Color.White;
-            this.btnExtender.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExtender.Click += new System.EventHandler(this.btnExtender_Click);
-            // 
             // rodarAC
             // 
             this.rodarAC.Interval = 50;
@@ -238,17 +205,11 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
-            // label9
+            // label12
             // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(this.label10, "label10");
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Name = "label10";
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Name = "label12";
             // 
             // label11
             // 
@@ -256,11 +217,17 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Name = "label11";
             // 
-            // label12
+            // label10
             // 
-            resources.ApplyResources(this.label12, "label12");
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Name = "label12";
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Name = "label10";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Name = "label9";
             // 
             // tabControl1
             // 
@@ -390,7 +357,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(56)))));
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.btnExtender);
             this.Controls.Add(this.btnAC);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -416,7 +382,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnMain;
         private Bunifu.Framework.UI.BunifuFlatButton btnAC;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnExtender;
         private System.Windows.Forms.Timer rodarAC;
         private Bunifu.Framework.UI.BunifuFlatButton btnSelf;
         private System.Windows.Forms.Label label4;

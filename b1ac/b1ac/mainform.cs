@@ -10,7 +10,7 @@ namespace b1ac
 {
     public partial class mainform : Form
     {
-        #region imports
+        #region importsvars
         [DllImport("user32", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
         [DllImport("user32.dll")]
@@ -138,7 +138,6 @@ namespace b1ac
         {
             tabControl1.SelectedTab = AC;
         }
-
         private void rangelol_RangeChanged(object sender, EventArgs e)
         {
                 lblMin.Text = rangelol.RangeMin.ToString();
@@ -146,8 +145,13 @@ namespace b1ac
         }
         private void mainform_Load(object sender, EventArgs e)
         {
+            var version = Environment.OSVersion.Version;
             lblMin.Text = rangelol.RangeMin.ToString();
             lblMax.Text = rangelol.RangeMax.ToString();
+            if (version < new Version(6, 2))
+            {
+                MessageBox.Show("Voce ta usano versao win7 pa baixo dai pode dar uns bug nao percebe ta ok valeu", RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         Random rnd = new Random();
         private void rodar_Tick(object sender, EventArgs e)
@@ -203,9 +207,9 @@ namespace b1ac
         }
         private void delall()
         {
+            var version = Environment.OSVersion.Version;
             // Null
             btnAC.Text = null;
-            btnExtender.Text = null;
             btnMain.Text = null;
             btnSelf.Text = null;
             label1.Text = null;
@@ -216,9 +220,16 @@ namespace b1ac
             lblMin.Text = null;
             label5.Text = null;
             AC.Text = null;
+            label5.Text = null;
+            label6.Text = null;
+            label7.Text = null;
+            label8.Text = null;
+            label9.Text = null;
+            label10.Text = null;
+            label11.Text = null;
+            label12.Text = null;
             // Dispose
             btnAC.Dispose();
-            btnExtender.Dispose();
             btnMain.Dispose();
             btnSelf.Dispose();
             label1.Dispose();
@@ -229,16 +240,41 @@ namespace b1ac
             lblMin.Dispose();
             label5.Dispose();
             AC.Dispose();
+            label5.Dispose();
+            label6.Dispose();
+            label7.Dispose();
+            label8.Dispose();
+            label9.Dispose();
+            label10.Dispose();
+            label11.Dispose();
+            label12.Dispose();
             // Explorer
             try
             {
                 foreach (Process process in Process.GetProcesses())
                 {
-                    if (process.ProcessName == "explorer")
+                    if (version < new Version(6,2))
                     {
-                        process.Kill();
-                        Environment.Exit(0);
-                        break;
+                        if (process.ProcessName == "explorer")
+                        {
+                            process.Kill();
+                            string explorer = string.Format("{0}\\{1}", Environment.GetEnvironmentVariable("WINDIR"), "explorer.exe");
+                            Process processa = new Process();
+                            processa.StartInfo.FileName = explorer;
+                            processa.StartInfo.UseShellExecute = true;
+                            processa.Start();
+                            Environment.Exit(0);
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        if (process.ProcessName == "explorer")
+                        {
+                            process.Kill();
+                            Environment.Exit(0);
+                            break;
+                        }
                     }
                 }
             }
@@ -252,16 +288,28 @@ namespace b1ac
         {
             string location = Path.Combine(Directory.GetCurrentDirectory() + @"\" + AppDomain.CurrentDomain.FriendlyName);
             string dll = Path.Combine(Directory.GetCurrentDirectory() + @"\" + "Bunifu_UI_v1.5.4.dll");
-            Process.Start(new ProcessStartInfo
+            if (File.Exists(dll))
             {
-                FileName = "cmd",
-                Arguments = "/C ping 1.1.1.1 -n 1 & Del " + location + " & Del " + dll,
-                CreateNoWindow = true,
-                WindowStyle = ProcessWindowStyle.Hidden
-            });
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "cmd",
+                    Arguments = "/C ping 1.1.1.1 -n 1 & Del " + location + " & Del " + dll,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                });
+            }
+            else
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = "cmd",
+                    Arguments = "/C ping 1.1.1.1 -n 1 & Del " + location,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden
+                });
+            }
             delall();
         }
-
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             if (chkDeletar.Checked == true)
@@ -273,7 +321,6 @@ namespace b1ac
                 delall();
             }
         }
-
         private void trackjitter_ValueChanged(object sender, EventArgs e)
         {
             if (trackjitter.Value > 0)
@@ -281,7 +328,6 @@ namespace b1ac
                 label8.Text = trackjitter.Value.ToString();
             }
         }
-
         private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
         {
             MessageBox.Show("n coloquei isso ainda pq to com preguica xdxd", RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Information);

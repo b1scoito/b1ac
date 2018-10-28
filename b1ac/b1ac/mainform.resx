@@ -280,34 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnExtender.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="btnExtender.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 59</value>
-  </data>
-  <data name="btnExtender.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 33</value>
-  </data>
-  <data name="btnExtender.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnExtender.Text" xml:space="preserve">
-    <value>&gt;</value>
-  </data>
-  <data name="&gt;&gt;btnExtender.Name" xml:space="preserve">
-    <value>btnExtender</value>
-  </data>
-  <data name="&gt;&gt;btnExtender.Type" xml:space="preserve">
-    <value>Bunifu.Framework.UI.BunifuFlatButton, Bunifu_UI_v1.5.4, Version=1.5.4.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnExtender.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnExtender.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="rodarAC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -316,7 +289,7 @@
     <value>Stretch</value>
   </data>
   <data name="btnAC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 59</value>
+    <value>32, 67</value>
   </data>
   <data name="btnAC.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 33</value>
@@ -337,7 +310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAC.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

@@ -1,4 +1,3 @@
-C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Release\b1ac.csprojAssemblyReference.cache
 C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Release\b1ac.mainform.resources
 C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Release\b1ac.Properties.Resources.resources
 C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Release\b1ac.csproj.GenerateResource.cache
@@ -8,3 +7,4 @@ C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Release\b1ac.pdb
 C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Release\b1ac.exe.config
 C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Release\b1ac.exe
 C:\Users\rafae\Desktop\Projects\b1ac\b1ac\bin\Release\b1ac.pdb
+C:\Users\rafae\Desktop\Projects\b1ac\b1ac\obj\Release\b1ac.csprojAssemblyReference.cache
