@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -11,6 +12,8 @@ namespace b1ac
     public partial class mainform : Form
     {
         #region importsvars
+        Random rnd = new Random();
+        bool estado = false;
         [DllImport("user32", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
         [DllImport("user32.dll")]
@@ -90,7 +93,6 @@ namespace b1ac
                 Console.WriteLine("Global Hotkey F4 couldn't be registered !");
             }
         }
-        bool estado = false;
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x0312)
@@ -145,15 +147,9 @@ namespace b1ac
         }
         private void mainform_Load(object sender, EventArgs e)
         {
-            var version = Environment.OSVersion.Version;
             lblMin.Text = rangelol.RangeMin.ToString();
             lblMax.Text = rangelol.RangeMax.ToString();
-            if (version < new Version(6, 2))
-            {
-                MessageBox.Show("Voce ta usano versao win7 pa baixo dai pode dar uns bug nao percebe ta ok valeu", RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
         }
-        Random rnd = new Random();
         private void rodar_Tick(object sender, EventArgs e)
         {
             if (rangelol.RangeMin == 0)
@@ -165,7 +161,58 @@ namespace b1ac
             int cpsmed;
             if (bunifuCheckbox2.Checked == true)
             {
-                // jitter
+                cpsmed = rnd.Next(rangelol.RangeMin, rangelol.RangeMax);
+                if (rangelol.RangeMin > 0)
+                {
+                    minval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.2;
+                    maxval = 1000 / rangelol.RangeMin + rangelol.RangeMax * (int)0.48;
+                    rodarAC.Interval = rnd.Next(minval, maxval);
+                }
+                if (bunifuCheckbox1.Checked == true)
+                {
+                    if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker") || GetCaptionOfActiveWindow().Contains("J3Ultimate"))
+                    {
+                        if (!ApplicationIsActivated())
+                        {
+                            if (MouseButtons == MouseButtons.Left)
+                            {
+                                label5.Text = "Media CPS: " + cpsmed;
+                                mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                                mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                                if (trackjitter.Value == 0)
+                                {
+                                    trackjitter.Value = 1;
+                                }
+                                int randx = rnd.Next(1, trackjitter.Value);
+                                int randy = rnd.Next(1, trackjitter.Value);
+                                int mX = MousePosition.X;
+                                int mY = MousePosition.Y;
+                                Cursor.Position = new Point(mX - randx, mY - randy);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (!ApplicationIsActivated())
+                    {
+                        if (MouseButtons == MouseButtons.Left)
+                        {
+                            label5.Text = "Media CPS: " + cpsmed;
+                            mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+                            mouse_event(MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+                            if (trackjitter.Value == 0)
+                            {
+                                trackjitter.Value = 1;
+                            }
+                            int randx = rnd.Next(1, trackjitter.Value);
+                            int randy = rnd.Next(1, trackjitter.Value);
+                            int mX = MousePosition.X;
+                            int mY = MousePosition.Y;
+                            Cursor.Position = new Point(mX - randx, mY - randy);
+                        }
+                    }
+                }
             }
             else
             {
@@ -178,7 +225,7 @@ namespace b1ac
                 }
                 if (bunifuCheckbox1.Checked == true)
                 {
-                    if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker"))
+                    if (GetCaptionOfActiveWindow().Contains("Minecraft") || GetCaptionOfActiveWindow().Contains("Badlion") || GetCaptionOfActiveWindow().Contains("Labymod") || GetCaptionOfActiveWindow().Contains("OCMC") || GetCaptionOfActiveWindow().Contains("Cheatbreaker") || GetCaptionOfActiveWindow().Contains("J3Ultimate"))
                     {
                         if (!ApplicationIsActivated())
                         {
@@ -327,11 +374,6 @@ namespace b1ac
             {
                 label8.Text = trackjitter.Value.ToString();
             }
-        }
-        private void bunifuCheckbox2_OnChange(object sender, EventArgs e)
-        {
-            MessageBox.Show("n coloquei isso ainda pq to com preguica xdxd", RandomString(5), MessageBoxButtons.OK, MessageBoxIcon.Information);
-            bunifuCheckbox2.Checked = false;
         }
     }
 }

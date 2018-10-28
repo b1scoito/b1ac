@@ -475,7 +475,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 44</value>
+    <value>255, 28</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 14</value>
@@ -508,7 +508,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 44</value>
+    <value>183, 28</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 14</value>
@@ -532,7 +532,7 @@
     <value>1</value>
   </data>
   <data name="trackjitter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 61</value>
+    <value>186, 45</value>
   </data>
   <data name="trackjitter.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 30</value>
@@ -562,7 +562,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 66</value>
+    <value>138, 50</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 14</value>
@@ -586,7 +586,7 @@
     <value>3</value>
   </data>
   <data name="bunifuCheckbox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>112, 62</value>
+    <value>112, 46</value>
   </data>
   <data name="bunifuCheckbox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -616,7 +616,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 66</value>
+    <value>70, 50</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 14</value>
@@ -682,7 +682,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 94</value>
+    <value>232, 78</value>
   </data>
   <data name="lblMax.Size" type="System.Drawing.Size, System.Drawing">
     <value>40, 14</value>
@@ -712,7 +712,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 94</value>
+    <value>49, 78</value>
   </data>
   <data name="lblMin.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 13</value>
@@ -736,7 +736,7 @@
     <value>8</value>
   </data>
   <data name="rangelol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 111</value>
+    <value>52, 95</value>
   </data>
   <data name="rangelol.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 30</value>
@@ -757,7 +757,7 @@
     <value>9</value>
   </data>
   <data name="bunifuCheckbox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>44, 62</value>
+    <value>44, 46</value>
   </data>
   <data name="bunifuCheckbox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -787,7 +787,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 94</value>
+    <value>143, 78</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 14</value>
@@ -866,9 +866,6 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>498, 245</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

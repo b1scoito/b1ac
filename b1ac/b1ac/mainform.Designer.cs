@@ -295,7 +295,6 @@
             this.bunifuCheckbox2.ForeColor = System.Drawing.Color.White;
             resources.ApplyResources(this.bunifuCheckbox2, "bunifuCheckbox2");
             this.bunifuCheckbox2.Name = "bunifuCheckbox2";
-            this.bunifuCheckbox2.OnChange += new System.EventHandler(this.bunifuCheckbox2_OnChange);
             // 
             // label3
             // 
