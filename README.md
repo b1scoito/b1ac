@@ -9,3 +9,5 @@
 * F10 = SelfDestruct
 
 #### Projeto nao e tao indetectavel mas e suportado pela comunidade;
+
+Outdated! https://github.com/b1scoito/clicker
